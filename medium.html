@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Medium level</title>
+</head>
+<link rel="stylesheet" href="style2.css">
+<body>
+    <img src="1.JPG" alt="gif" style="display: none; width: 200px;">
+    <div class="container">
+        <h2 class="heading">
+            Guess the Number
+        </h2>
+        <h5 class="heading">Medium Level</h5>
+        <h5 class="heading">Choose number 1 to 500</h5>
+
+        <input type="number" placeholder="Enter Number">
+        <button type="submit" onclick="checkMedium()"> Check</button> <a href="index.html"> <button>Back to
+                Levels</button></a>
+
+    </div>
+    <script>
+    let randm;
+let count;
+
+function reSetGame() {
+    randm = Math.floor(Math.random() * 500);
+    count = 0;
+}
+reSetGame();
+
+function checkMedium() {
+
+    let guessedNumber = document.querySelector('input').value;
+    if (guessedNumber != '') {
+        if (guessedNumber == randm) {
+            alert('Congratulation You guessed the ' + randm + " in : " + count + " tries");
+            count++;
+            document.querySelector('body').style.backgroundImage = "url('image/star.gif')";
+            reSetGame();
+        } else if (guessedNumber < randm) {
+            alert("You guessed Small Number");
+            count++;
+        } else if (guessedNumber > randm) {
+            alert("You guessed Big Number");
+            count++;
+        }
+    } else {
+        alert("Enter number First");
+    }
+}
+    </script>
+</body>
+
+</html>
