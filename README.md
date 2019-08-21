@@ -1,2 +1,2 @@
 # guessTheNumber
-*Published : https://github.com/Kainatn/guessTheNumber
+*Published : https://kainatn.github.io/guessTheNumber/
